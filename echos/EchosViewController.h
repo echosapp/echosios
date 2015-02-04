@@ -11,5 +11,6 @@
 
 @interface EchosViewController : UIViewController
 - (IBAction)onClickValidate:(id)sender;
+- (IBAction)onClickValidateCustom:(id)sender;
 
 @end

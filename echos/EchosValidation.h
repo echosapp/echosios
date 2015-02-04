@@ -9,9 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "EchosClient.h"
 
-@interface EchosValidation : AFHTTPSessionManager
-
-+ (EchosValidation *)sharedClient;
+@interface EchosValidation : NSObject
 
 - (NSURLSessionDataTask *)validateUserWithuserName: (NSString*) userName
                                          password : (NSString*) password

@@ -24,7 +24,21 @@
 
 - (IBAction)onClickValidate:(id)sender
 {
-    //EchosClient* ec = [EchosClient sharedClient];
+    EchosManager* em = [ EchosManager sharedClient ];
+    NSMutableDictionary*res = [ em validateUserWithuserName:@"niraj" password:@"niraj" phone:@"+17323190083" countryCode:@"1"];
+    //NSLog(@"%@", res );
+    
+    /*
+     
+
+     */
+    
+}
+
+- (IBAction)onClickValidateCustom:(id)sender
+{
+    
+    EchosClient* ec = [EchosClient sharedClient];
     
     //AFHTTPRequestOperationManager * manager = [AFHTTPRequestOperationManager manager];
     //manager.responseSerializer = [AFJSONResponseSerializer serializer];
@@ -32,26 +46,18 @@
     NSDictionary *param = @{@"username":@"kniraj",
                             @"password":@"niraj", @"phone":@"+17323190083", @"countryCode":@"1",@"apiKey":@"2c0c46dc97cce383b9f8530c4c47f853f36e2fd1a2b452fd"};
     NSURL *url = [NSURL URLWithString:@"https://echos-app.appspot.com/api/v1.0/"];
-    NSString *uu = [[NSURL URLWithString:@"/validation/" relativeToURL:url] absoluteString];
-    NSLog( @"%@",uu );
-    // Ensure terminal slash for baseURL path, so that NSURL +URLWithString:relativeToURL: works as expected
-    if ([[url path] length] > 0 && ![[url absoluteString] hasSuffix:@"/"]) {
-        url = [url URLByAppendingPathComponent:@""];
-    }
-    NSLog(@"%@", [url absoluteString] );
-
+    
     //[ URL URLWithString:@"" relativePath: URL];
     AFHTTPSessionManager *manager = [[AFHTTPSessionManager alloc] initWithBaseURL:url];
-    [ manager POST:@"/validation/" parameters:param success:^(NSURLSessionDataTask *task, id responseObject) {
+    [ ec POST:@"validation/" parameters:param success:^(NSURLSessionDataTask *task, id responseObject) {
         NSLog(@"succes");
         NSDictionary* res = (NSDictionary *)responseObject;
         NSLog(@"Received: %@", res);
-
+        
     } failure:^(NSURLSessionDataTask *task, NSError *error) {
         NSLog(@"error");
         //NSLog(error);
     }];
-
     
 }
 @end

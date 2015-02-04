@@ -44,9 +44,9 @@
 
 -(void)test_validateUser
 {
-    EchosManager* em = [ EchosManager sharedInstance];
+    EchosManager* em = [ EchosManager sharedClient];
     NSMutableDictionary* res = [ em validateUserWithuserName:@"niraj" password:@"niraj" phone:@"+17323190083" countryCode:@"+1"];
-    NSLog( res );
+    NSLog( @"%@", res );
 }
 
 @end

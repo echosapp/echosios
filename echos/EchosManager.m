@@ -28,17 +28,18 @@
 
 #pragma mark Singleton Methods
 
-+ (instancetype)sharedInstance {
-    static EchosManager *sharedEchosManager = nil;
++ (instancetype)sharedClient {
+    static EchosManager *_sharedClient = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        sharedEchosManager = [[self alloc] init];
+        _sharedClient = [[EchosManager alloc] initSharedClient ];
     });
-    return sharedEchosManager;
+    
+    return _sharedClient;
 }
 
 
-- (id)init {
+- ( instancetype )initSharedClient {
     if (self = [super init])
     {
         self.apiKey = @"2c0c46dc97cce383b9f8530c4c47f853f36e2fd1a2b452fd";
@@ -102,7 +103,7 @@
 }
 
 
-// get current user
+// get current user TODO: this method still needs to be fixed. fix once the session method is fixed
 -( NSInteger* ) currentUser
 {
     if ( [self sessionToken] )
@@ -126,7 +127,7 @@
 - (NSMutableDictionary* ) validateUserWithuserName:(NSString *)userName password:(NSString *)password phone:(NSString *)phone countryCode:(NSString *)countryCode
 {
     __block NSMutableDictionary* res = nil;
-    NSURLSessionDataTask *task = [ [EchosValidation sharedClient] validateUserWithuserName:userName password:password phone:phone countryCode:countryCode apiKey:self.apiKey completion:^(NSMutableDictionary *results, NSError *error) {
+    NSURLSessionDataTask *task = [ self.validate validateUserWithuserName:userName password:password phone:phone countryCode:countryCode apiKey:self.apiKey completion:^(NSMutableDictionary *results, NSError *error) {
         if ( results )
         {
             res = results;
@@ -137,7 +138,7 @@
         }
         
     }];
-    NSLog( @"%@", [ task description] );
+    //NSLog( @"%@", [ task description] );
     return res;
 }
 

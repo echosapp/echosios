@@ -17,7 +17,7 @@
 
 // public functions
 
-+(instancetype) sharedInstance;
++(instancetype) sharedClient;
 
 -( NSInteger* ) currentUser;
 

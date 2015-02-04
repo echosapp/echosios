@@ -8,34 +8,41 @@
 
 #import "EchosClient.h"
 
+static NSString * const prodUrlString = @"https://echos-app.appspot.com/api/v1.0/";
+static NSString * const testUrlString = @"http://localhost:8080/api/v1.0/";
+
 @implementation EchosClient
 
+/*
 + (instancetype)sharedClient {
     static EchosClient *_sharedClient = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        NSURL *baseURL = [NSURL URLWithString:@"https://echos-app.appspot.com/"];
-        [NSURL URLWithString:@"/api/v1.0/" relativeToURL:baseURL];
-        
+        NSURL *baseURL = [NSURL URLWithString:@"https://echos-app.appspot.com/api/v1.0/"];
         NSURLSessionConfiguration *config = [NSURLSessionConfiguration defaultSessionConfiguration];
-        [config setHTTPAdditionalHeaders:@{@"User-Agent" : @"Echos ios 1.0"}];
+        [config setHTTPAdditionalHeaders:@{@"User-Agent" : @"Echos iOS 1.0"}];
         
-       // NSURLCache *cache = [[NSURLCache alloc] initWithMemoryCapacity:10 * 1024 * 1024
-       //                                                   diskCapacity:50 * 1024 * 1024
-       //                                                       diskPath:nil];
-        
-       // [config setURLCache:cache];
-        
-        // AFNetworking Client
-        _sharedClient = [ [ self alloc] initWithBaseURL:baseURL ];
+        _sharedClient = [ [ self alloc ] initWithBaseURL:baseURL sessionConfiguration:config ];
         _sharedClient.responseSerializer = [AFJSONResponseSerializer serializer];
-        _sharedClient.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", nil];
+        _sharedClient.responseSerializer.acceptableContentTypes = [ NSSet setWithObjects:@"application/json", nil ];
         _sharedClient.requestSerializer = [AFJSONRequestSerializer serializer];
-
 
     });
     
     return _sharedClient;
 }
+*/
+
++ (instancetype)sharedClient {
+    static EchosClient *_sharedClient = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        _sharedClient = [[EchosClient alloc] initWithBaseURL:[NSURL URLWithString:prodUrlString]];
+        //_sharedClient.securityPolicy = [AFSecurityPolicy policyWithPinningMode:AFSSLPinningModeNone];
+    });
+    
+    return _sharedClient;
+}
+
 
 @end
