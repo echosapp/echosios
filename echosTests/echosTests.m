@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import <XCTest/XCTest.h>
+#import "EchosManager.h"
+#import "EchosClient.h"
 
 @interface echosTests : XCTestCase
 
@@ -25,6 +27,7 @@
     [super tearDown];
 }
 
+/*
 - (void)testExample {
     // This is an example of a functional test case.
     XCTAssert(YES, @"Pass");
@@ -35,6 +38,15 @@
     [self measureBlock:^{
         // Put the code you want to measure the time of here.
     }];
+}
+
+*/
+
+-(void)test_validateUser
+{
+    EchosManager* em = [ EchosManager sharedInstance];
+    NSMutableDictionary* res = [ em validateUserWithuserName:@"niraj" password:@"niraj" phone:@"+17323190083" countryCode:@"+1"];
+    NSLog( res );
 }
 
 @end

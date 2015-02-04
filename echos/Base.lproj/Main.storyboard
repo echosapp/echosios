@@ -1,25 +1,73 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Echos View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController id="vXZ-lx-hvc" customClass="EchosViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Echos" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fbB-ZP-ocG">
+                                <rect key="frame" x="20" y="65" width="335" height="39"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="34"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MGT-xr-7UV">
+                                <rect key="frame" x="72" y="166" width="230" height="50"/>
+                                <color key="backgroundColor" red="0.99231303765930168" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="gcz-ah-lEP"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="35"/>
+                                <state key="normal" title="Validate">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="onClickValidate:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="L98-bB-5BN"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="1" blue="0.82352948189999997" alpha="1" colorSpace="deviceRGB"/>
+                        <color key="tintColor" red="0.0" green="1" blue="0.82352948189999997" alpha="1" colorSpace="deviceRGB"/>
+                        <constraints>
+                            <constraint firstItem="fbB-ZP-ocG" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="8" symbolic="YES" id="G1u-Gz-mfj"/>
+                            <constraint firstItem="MGT-xr-7UV" firstAttribute="centerX" secondItem="fbB-ZP-ocG" secondAttribute="centerX" id="KCV-5Z-RfH"/>
+                            <constraint firstItem="fbB-ZP-ocG" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="151" id="SHE-1A-uEv"/>
+                            <constraint firstItem="fbB-ZP-ocG" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="45" id="V1n-fk-VE7"/>
+                            <constraint firstAttribute="trailing" secondItem="fbB-ZP-ocG" secondAttribute="trailing" constant="20" symbolic="YES" id="VNb-Xg-khX"/>
+                            <constraint firstItem="fbB-ZP-ocG" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="45" id="aA2-OE-L63"/>
+                            <constraint firstItem="fbB-ZP-ocG" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="hKe-vR-biv"/>
+                            <constraint firstItem="MGT-xr-7UV" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="56" id="lYR-3c-Ogu"/>
+                            <constraint firstItem="MGT-xr-7UV" firstAttribute="top" secondItem="fbB-ZP-ocG" secondAttribute="bottom" constant="62" id="nyy-8U-tBy"/>
+                            <constraint firstItem="fbB-ZP-ocG" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="20" symbolic="YES" id="zY3-iP-jhd"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="G1u-Gz-mfj"/>
+                                <exclude reference="SHE-1A-uEv"/>
+                                <exclude reference="V1n-fk-VE7"/>
+                                <exclude reference="zY3-iP-jhd"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="405.5" y="240.5"/>
         </scene>
     </scenes>
+    <color key="tintColor" red="0.0026427606370000001" green="1" blue="0.48371122919999998" alpha="1" colorSpace="calibratedRGB"/>
 </document>
