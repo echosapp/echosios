@@ -141,12 +141,15 @@
     return res;
 }
 
+#pragma mark session methods
 - ( NSMutableDictionary* ) createSessionWithloginCredentials: ( NSString* )loginName
                                         password : ( NSString* )password
 {
     return nil;
 }
 
+
+#pragma mark user methods
 - (NSMutableDictionary* ) createUserwithsessionToken:(NSString *)sessionToken validationCode:(NSInteger *)validationCode
 {
     return nil;
