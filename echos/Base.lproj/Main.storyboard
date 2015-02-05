@@ -82,7 +82,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="405.5" y="240.5"/>
+            <point key="canvasLocation" x="-174.5" y="-107.5"/>
         </scene>
     </scenes>
     <color key="tintColor" red="0.0026427606370000001" green="1" blue="0.48371122919999998" alpha="1" colorSpace="calibratedRGB"/>

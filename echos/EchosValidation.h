@@ -16,7 +16,7 @@
                                             phone : (NSString*) phone
                                       countryCode : (NSString*) countryCode
                                            apiKey : (NSString*) apiKey
-                                        completion:( void (^)(NSMutableDictionary *results, NSError *error) )completion;
+                                        completion:( void (^)(NSMutableDictionary *result, NSError *error) )completion;
 
 
 @end

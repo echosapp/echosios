@@ -21,7 +21,7 @@
 @property (nonatomic, strong) EchosSession *session;
 @property (nonatomic, strong) EchosValidation* validate;
 @property (nonatomic, strong) SSKeychain *keychain;
-//@property (nonatomic, strong) UIActivityIndicatorView *indicator;
+@property (nonatomic, strong) UIActivityIndicatorView *indicator;
 @end
 
 @implementation EchosManager
@@ -124,22 +124,24 @@
 }
 
 #pragma mark validation methods
-- (NSMutableDictionary* ) validateUserWithuserName:(NSString *)userName password:(NSString *)password phone:(NSString *)phone countryCode:(NSString *)countryCode
+- (NSURLSessionDataTask* ) validateUserWithuserName:(NSString *)userName password:(NSString *)password phone:(NSString *)phone countryCode:(NSString *)countryCode completion:(void (^)(NSMutableDictionary * res))completion
 {
-    __block NSMutableDictionary* res = nil;
-    NSURLSessionDataTask *task = [ self.validate validateUserWithuserName:userName password:password phone:phone countryCode:countryCode apiKey:self.apiKey completion:^(NSMutableDictionary *results, NSError *error) {
-        if ( results )
+    NSURLSessionDataTask *task = [ self.validate validateUserWithuserName:userName password:password phone:phone countryCode:countryCode apiKey:self.apiKey completion:^(NSMutableDictionary *result, NSError *error) {
+        __block NSMutableDictionary* res = nil;
+        if ( result )
         {
-            res = results;
+            res = [self parseResult:result];
         }
         else
         {
-            res = [ @{@"error":(NSString*)error} mutableCopy ];
+            res = [self parseError:error];
         }
+        dispatch_async(dispatch_get_main_queue(), ^{
+            completion( res );
+        });
         
     }];
-    //NSLog( @"%@", [ task description] );
-    return res;
+    return task;
 }
 
 #pragma mark session methods

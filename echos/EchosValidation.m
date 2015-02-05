@@ -23,42 +23,16 @@
                                   parameters:param
                                   success:^(NSURLSessionDataTask *task, id responseObject)
                                   {
-                                      NSLog(@"%@", responseObject);
+                                      // on success dispatch the response to completion handler
                                       dispatch_async(dispatch_get_main_queue(), ^{
-                                          //NSHTTPURLResponse *response = (NSHTTPURLResponse *)task.response;
-                                          //NSLog(@"Response: %@", response);
-                                          //NSLog(@"Response: %@", error);
-                                          completion(responseObject, nil);
+                                          NSMutableDictionary* res = (NSMutableDictionary *)responseObject;
+                                          completion(res, nil);
                                       });
-
-                                       //[[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
-                                      /*
-                                        NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *)task.response;
-                                       if (httpResponse.statusCode == 200) {
-                                           dispatch_async(dispatch_get_main_queue(), ^{
-                                               //NSDictionary* res = (NSDictionary *)responseObject;
-                                               //NSLog(@"Received: %@", res);
-                                               
-                                               completion( nil, nil);
-                                               //completion(responseObject[@"results"], nil);
-                                           });
-                                       } else {
-                                           //NSLog(@"Received: %@", responseObject);
-                                           //NSLog(@"Received HTTP %ld", (long)httpResponse.statusCode);
-                                           dispatch_async(dispatch_get_main_queue(), ^{
-                                               completion(nil, nil);
-                                           });
-                                           
-                                       }
-                                       */
-                                       
                                    }
                                    failure:^(NSURLSessionDataTask *task, NSError *error)
                                    {
+                                       // on failure dispatch the error to failure handler
                                        dispatch_async(dispatch_get_main_queue(), ^{
-                                           NSHTTPURLResponse *response = (NSHTTPURLResponse *)task.response;
-                                           NSLog(@"Response: %@", response);
-                                           NSLog(@"Response: %@", error);
                                            completion(nil, error);
                                        });
                                    }

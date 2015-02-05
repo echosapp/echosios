@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		570977441A83891B003EFAA5 /* EchosJSONResponseSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 570977431A83891B003EFAA5 /* EchosJSONResponseSerializer.m */; };
+		570977471A8393BA003EFAA5 /* EchosObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 570977461A8393BA003EFAA5 /* EchosObject.m */; };
 		572936481A7B33B2007EEF57 /* EchosValidation.m in Sources */ = {isa = PBXBuildFile; fileRef = 572936471A7B33B2007EEF57 /* EchosValidation.m */; };
 		5729364B1A7B3EDB007EEF57 /* EchosClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 5729364A1A7B3EDB007EEF57 /* EchosClient.m */; };
 		5729364F1A7D7D0D007EEF57 /* EchosLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5729364E1A7D7D0D007EEF57 /* EchosLoginViewController.m */; };
@@ -43,6 +45,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		570977421A83891B003EFAA5 /* EchosJSONResponseSerializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EchosJSONResponseSerializer.h; sourceTree = "<group>"; };
+		570977431A83891B003EFAA5 /* EchosJSONResponseSerializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EchosJSONResponseSerializer.m; sourceTree = "<group>"; };
+		570977451A8393BA003EFAA5 /* EchosObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EchosObject.h; sourceTree = "<group>"; };
+		570977461A8393BA003EFAA5 /* EchosObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EchosObject.m; sourceTree = "<group>"; };
 		572936461A7B33B2007EEF57 /* EchosValidation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EchosValidation.h; sourceTree = "<group>"; };
 		572936471A7B33B2007EEF57 /* EchosValidation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EchosValidation.m; sourceTree = "<group>"; };
 		572936491A7B3EDB007EEF57 /* EchosClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EchosClient.h; sourceTree = "<group>"; };
@@ -217,14 +223,18 @@
 			children = (
 				57ADDF891A79CCC900D14C65 /* EchosManager.h */,
 				57ADDF8A1A79CCC900D14C65 /* EchosManager.m */,
+				570977451A8393BA003EFAA5 /* EchosObject.h */,
+				570977461A8393BA003EFAA5 /* EchosObject.m */,
 				57ADDF8C1A79E2CC00D14C65 /* EchosUser.h */,
 				57ADDF8D1A79E2CC00D14C65 /* EchosUser.m */,
 				572936461A7B33B2007EEF57 /* EchosValidation.h */,
 				572936471A7B33B2007EEF57 /* EchosValidation.m */,
-				572936491A7B3EDB007EEF57 /* EchosClient.h */,
-				5729364A1A7B3EDB007EEF57 /* EchosClient.m */,
 				572936671A7D7FF4007EEF57 /* EchosSession.h */,
 				572936681A7D7FF4007EEF57 /* EchosSession.m */,
+				572936491A7B3EDB007EEF57 /* EchosClient.h */,
+				5729364A1A7B3EDB007EEF57 /* EchosClient.m */,
+				570977421A83891B003EFAA5 /* EchosJSONResponseSerializer.h */,
+				570977431A83891B003EFAA5 /* EchosJSONResponseSerializer.m */,
 			);
 			name = EchosManager;
 			sourceTree = "<group>";
@@ -397,6 +407,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				572936481A7B33B2007EEF57 /* EchosValidation.m in Sources */,
+				570977441A83891B003EFAA5 /* EchosJSONResponseSerializer.m in Sources */,
 				572936601A7D7DC8007EEF57 /* EchosCardsViewController.m in Sources */,
 				5729364F1A7D7D0D007EEF57 /* EchosLoginViewController.m in Sources */,
 				5729364B1A7B3EDB007EEF57 /* EchosClient.m in Sources */,
@@ -411,6 +422,7 @@
 				57BAF4051A8075C100FBA34B /* EchosViewController.m in Sources */,
 				57ADDF651A79B7E800D14C65 /* AppDelegate.m in Sources */,
 				572936661A7D7EBC007EEF57 /* EchosRecipientViewController.m in Sources */,
+				570977471A8393BA003EFAA5 /* EchosObject.m in Sources */,
 				5729365D1A7D7D84007EEF57 /* EchosMessageViewController.m in Sources */,
 				57ADDF621A79B7E800D14C65 /* main.m in Sources */,
 			);

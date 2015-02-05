@@ -11,9 +11,10 @@
 #import "EchosValidation.h"
 #import "EchosSession.h"
 #import "SSKeychain.h"
+#import "EchosObject.h"
 
 
-@interface EchosManager : NSObject
+@interface EchosManager : EchosObject
 
 // public functions
 
@@ -22,10 +23,11 @@
 -( NSInteger* ) currentUser;
 
 // Validate Functions
-- ( NSMutableDictionary* ) validateUserWithuserName: ( NSString* )userName
-                                           password: ( NSString * )password
-                                             phone : ( NSString * )phone
-                                       countryCode : ( NSString * )countryCode;
+- (NSMutableDictionary* )   validateUserWithuserName:(NSString *)userName
+                                            password:(NSString *)password
+                                               phone:(NSString *)phone
+                                         countryCode:(NSString *)countryCode
+                                          completion:(void (^)(NSMutableDictionary * res))completion;
 
 
 
