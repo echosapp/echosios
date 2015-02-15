@@ -14,6 +14,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Pods-CountryPicker.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-SSKeychain.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -32,27 +37,32 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>033733C5AA517580D9FD2107</key>
+		<key>1F254C72F7FDDAAC2C7F813D</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>4D823271BCCE742D924462C7</key>
+		<key>9CFB388A664A5057FDFE6A59</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>66802B3E228E061E0E3CA2C2</key>
+		<key>DC9C942350DD113B4C8917BC</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>849746A689F3567401CC2E15</key>
+		<key>E063D3F48C9C52EE983D2000</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>85E307A144AB216DD388DC00</key>
+		<key>E43CE3A54C7E90810EBAD867</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E8C07277AA73F30AF5B4F490</key>
 		<dict>
 			<key>primary</key>
 			<true/>

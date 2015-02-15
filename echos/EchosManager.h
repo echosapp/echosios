@@ -23,7 +23,7 @@
 -( NSInteger* ) currentUser;
 
 // Validate Functions
-- (NSMutableDictionary* )   validateUserWithuserName:(NSString *)userName
+- (NSURLSessionDataTask* )   validateUserWithuserName:(NSString *)userName
                                             password:(NSString *)password
                                                phone:(NSString *)phone
                                          countryCode:(NSString *)countryCode
@@ -39,6 +39,14 @@
 // User Functions
 -( NSMutableDictionary* ) createUserwithsessionToken: ( NSString * )sessionToken
                                      validationCode : ( NSInteger * )validationCode;
+
+
+-( NSURLSessionDataTask* ) getInstalledUsersWithPhone: (NSArray * )phoneNumbers
+                                          completion: (void (^) (NSMutableDictionary * res)) completion;
+// we pass an array of phone numbers - formatted to E164 - and get a dictionary with installed user information.
+
+
+
 
 
 

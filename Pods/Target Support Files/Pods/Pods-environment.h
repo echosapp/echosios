@@ -54,6 +54,12 @@
 #define COCOAPODS_VERSION_MINOR_AFNetworking_UIKit 5
 #define COCOAPODS_VERSION_PATCH_AFNetworking_UIKit 0
 
+// CountryPicker
+#define COCOAPODS_POD_AVAILABLE_CountryPicker
+#define COCOAPODS_VERSION_MAJOR_CountryPicker 1
+#define COCOAPODS_VERSION_MINOR_CountryPicker 2
+#define COCOAPODS_VERSION_PATCH_CountryPicker 3
+
 // SSKeychain
 #define COCOAPODS_POD_AVAILABLE_SSKeychain
 #define COCOAPODS_VERSION_MAJOR_SSKeychain 1

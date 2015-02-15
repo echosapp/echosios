@@ -7,7 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "EchosClient.h"
 
 @interface EchosSession : NSObject
+
+- (NSURLSessionDataTask *) createSessionWithloginCredentials: (NSString*) loginName
+                                         password : (NSString*) password
+                                           apiKey : (NSString*) apiKey
+                                        completion:( void (^)(NSMutableDictionary *result, NSError *error) )completion;
 
 @end

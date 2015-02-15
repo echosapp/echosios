@@ -10,8 +10,12 @@
 
 @implementation EchosValidation
 
-
--(NSURLSessionDataTask *)validateUserWithuserName:(NSString *)userName password:(NSString *)password phone:(NSString *)phone countryCode:(NSString *)countryCode apiKey:(NSString *)apiKey completion:(void (^)(NSMutableDictionary *, NSError *))completion
+-(NSURLSessionDataTask *)validateUserWithuserName:(NSString *)userName
+                                         password:(NSString *)password
+                                            phone:(NSString *)phone
+                                      countryCode:(NSString *)countryCode
+                                           apiKey:(NSString *)apiKey
+                                       completion:(void (^)(NSMutableDictionary *, NSError *))completion
 {
     NSDictionary *param = @{@"username":userName,
                             @"password":password,

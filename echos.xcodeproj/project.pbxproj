@@ -20,6 +20,8 @@
 		572936631A7D7E1A007EEF57 /* EchosValidationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 572936621A7D7E1A007EEF57 /* EchosValidationViewController.m */; };
 		572936661A7D7EBC007EEF57 /* EchosRecipientViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 572936651A7D7EBC007EEF57 /* EchosRecipientViewController.m */; };
 		572936691A7D7FF4007EEF57 /* EchosSession.m in Sources */ = {isa = PBXBuildFile; fileRef = 572936681A7D7FF4007EEF57 /* EchosSession.m */; };
+		5762994F1A913E570016E975 /* EchosAddressBook.m in Sources */ = {isa = PBXBuildFile; fileRef = 5762994E1A913E570016E975 /* EchosAddressBook.m */; };
+		576299521A9152030016E975 /* EchosContact.m in Sources */ = {isa = PBXBuildFile; fileRef = 576299511A9152030016E975 /* EchosContact.m */; };
 		57ADDF621A79B7E800D14C65 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 57ADDF611A79B7E800D14C65 /* main.m */; };
 		57ADDF651A79B7E800D14C65 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 57ADDF641A79B7E800D14C65 /* AppDelegate.m */; };
 		57ADDF681A79B7E800D14C65 /* echos.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 57ADDF661A79B7E800D14C65 /* echos.xcdatamodeld */; };
@@ -71,6 +73,10 @@
 		572936651A7D7EBC007EEF57 /* EchosRecipientViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EchosRecipientViewController.m; sourceTree = "<group>"; };
 		572936671A7D7FF4007EEF57 /* EchosSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EchosSession.h; sourceTree = "<group>"; };
 		572936681A7D7FF4007EEF57 /* EchosSession.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EchosSession.m; sourceTree = "<group>"; };
+		5762994D1A913E570016E975 /* EchosAddressBook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EchosAddressBook.h; sourceTree = "<group>"; };
+		5762994E1A913E570016E975 /* EchosAddressBook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EchosAddressBook.m; sourceTree = "<group>"; };
+		576299501A9152030016E975 /* EchosContact.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EchosContact.h; sourceTree = "<group>"; };
+		576299511A9152030016E975 /* EchosContact.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EchosContact.m; sourceTree = "<group>"; };
 		57ADDF5C1A79B7E800D14C65 /* echos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = echos.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		57ADDF601A79B7E800D14C65 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		57ADDF611A79B7E800D14C65 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -223,6 +229,8 @@
 			children = (
 				57ADDF891A79CCC900D14C65 /* EchosManager.h */,
 				57ADDF8A1A79CCC900D14C65 /* EchosManager.m */,
+				5762994D1A913E570016E975 /* EchosAddressBook.h */,
+				5762994E1A913E570016E975 /* EchosAddressBook.m */,
 				570977451A8393BA003EFAA5 /* EchosObject.h */,
 				570977461A8393BA003EFAA5 /* EchosObject.m */,
 				57ADDF8C1A79E2CC00D14C65 /* EchosUser.h */,
@@ -235,6 +243,8 @@
 				5729364A1A7B3EDB007EEF57 /* EchosClient.m */,
 				570977421A83891B003EFAA5 /* EchosJSONResponseSerializer.h */,
 				570977431A83891B003EFAA5 /* EchosJSONResponseSerializer.m */,
+				576299501A9152030016E975 /* EchosContact.h */,
+				576299511A9152030016E975 /* EchosContact.m */,
 			);
 			name = EchosManager;
 			sourceTree = "<group>";
@@ -410,6 +420,8 @@
 				570977441A83891B003EFAA5 /* EchosJSONResponseSerializer.m in Sources */,
 				572936601A7D7DC8007EEF57 /* EchosCardsViewController.m in Sources */,
 				5729364F1A7D7D0D007EEF57 /* EchosLoginViewController.m in Sources */,
+				5762994F1A913E570016E975 /* EchosAddressBook.m in Sources */,
+				576299521A9152030016E975 /* EchosContact.m in Sources */,
 				5729364B1A7B3EDB007EEF57 /* EchosClient.m in Sources */,
 				572936581A7D7D59007EEF57 /* EchosFriendsViewController.m in Sources */,
 				57ADDF8B1A79CCC900D14C65 /* EchosManager.m in Sources */,

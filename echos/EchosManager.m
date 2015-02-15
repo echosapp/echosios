@@ -15,7 +15,7 @@
 #define UPDATE_TIME @"updatetime"
 
 @interface EchosManager ()
-// public attributes
+// private attributes
 @property( nonatomic, strong ) NSString* apiKey;
 @property (nonatomic, strong) EchosUser *user;
 @property (nonatomic, strong) EchosSession *session;
@@ -123,7 +123,9 @@
     return nil;
 }
 
-#pragma mark validation methods
+#pragma mark validation endpoint functions
+// /api/v1.0/validation/
+
 - (NSURLSessionDataTask* ) validateUserWithuserName:(NSString *)userName password:(NSString *)password phone:(NSString *)phone countryCode:(NSString *)countryCode completion:(void (^)(NSMutableDictionary * res))completion
 {
     NSURLSessionDataTask *task = [ self.validate validateUserWithuserName:userName password:password phone:phone countryCode:countryCode apiKey:self.apiKey completion:^(NSMutableDictionary *result, NSError *error) {
