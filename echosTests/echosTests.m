@@ -10,6 +10,7 @@
 #import <XCTest/XCTest.h>
 #import "EchosManager.h"
 #import "EchosClient.h"
+#import "EchosContact.h"
 
 @interface echosTests : XCTestCase
 
@@ -40,7 +41,7 @@
     }];
 }
 
-*/
+
 
 -(void)test_validateUser
 {
@@ -51,9 +52,13 @@
     
 }
 
--(void) test_addressbook
+*/
+ 
+-(void) test_contact
 {
-    
+    EchosContact* ec = [ [ EchosContact alloc] init];
+    [ ec normalizePhoneNumber:@"732319008" countryCode:@"+1"]; // invalid number
+    [ ec normalizePhoneNumber:@"7323190083" countryCode:@"+1"]; // valid number
 }
 
 @end

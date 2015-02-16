@@ -8,6 +8,7 @@
 
 #import "EchosAddressBook.h"
 
+
 @implementation EchosAddressBook
 
 
@@ -40,5 +41,36 @@
 }
 
 */
+
+-( BOOL) isEmpty
+{
+    return true;
+}
+-( NSArray * ) normalizeContactsWithRecords : ( ABRecordRef* ) records
+{
+    NSArray* contactArray = @[];
+    return contactArray;
+}
+
+-( void ) persistContactsWithRecords : ( NSArray* ) records
+{
+    
+}
+
+-( void ) syncAddressBookWithUpdate
+{
+    
+}
+
+-( void ) syncChangedContactsWithEchos : (NSArray*) changedRecords
+{
+    
+}
+
+-( NSArray* ) getAllContacts
+{
+    NSArray* contactArray = @[];
+    return contactArray;
+}
 
 @end

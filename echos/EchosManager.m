@@ -161,4 +161,10 @@
 }
 
 
+-( NSURLSessionDataTask* ) getInstalledUsersWithPhone: (NSArray * )phoneNumbers
+                                           completion: (void (^) (NSMutableDictionary * res)) completion
+{
+    return nil;
+}
+
 @end

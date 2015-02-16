@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "NBPhoneNumberUtil.h"
 
 @interface EchosContact : NSObject
 
@@ -14,5 +15,8 @@
 - ( BOOL) isInstalledUser;
 -(instancetype) initwithName: (NSString*) name
                        phone: (NSString*) phone;
+
+-(NSString*) normalizePhoneNumber : (NSString*)number
+                      countryCode : (NSString*)countryCode;
 
 @end
