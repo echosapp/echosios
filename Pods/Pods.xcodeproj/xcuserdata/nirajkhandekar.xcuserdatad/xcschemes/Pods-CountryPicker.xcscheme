@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "9CFB388A664A5057FDFE6A59"
+               BlueprintIdentifier = "0FEF7DF7D5345783F2FDC716"
                BuildableName = "libPods-CountryPicker.a"
                BlueprintName = "Pods-CountryPicker"
                ReferencedContainer = "container:Pods.xcodeproj">

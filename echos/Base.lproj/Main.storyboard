@@ -1,88 +1,50 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="xAy-Zw-Lqs">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Echos View Controller-->
-        <scene sceneID="ufC-wZ-h7g">
+        <scene sceneID="CKX-Ve-kjr">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="EchosViewController" sceneMemberID="viewController">
+                <viewController extendedLayoutIncludesOpaqueBars="YES" id="xAy-Zw-Lqs" customClass="EchosViewController" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
-                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
+                        <viewControllerLayoutGuide type="top" id="wDR-BI-dZV"/>
+                        <viewControllerLayoutGuide type="bottom" id="hdv-jr-frR"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                    <view key="view" userInteractionEnabled="NO" contentMode="scaleToFill" id="0R7-TW-Cwa">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Echos" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fbB-ZP-ocG">
-                                <rect key="frame" x="20" y="65" width="335" height="39"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="34"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MGT-xr-7UV">
-                                <rect key="frame" x="72" y="166" width="230" height="50"/>
-                                <color key="backgroundColor" red="0.99231303765930168" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="gcz-ah-lEP"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="35"/>
-                                <state key="normal" title="Validate">
-                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="onClickValidate:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="L98-bB-5BN"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eLh-8L-oLQ">
-                                <rect key="frame" x="20" y="302" width="335" height="47"/>
-                                <color key="backgroundColor" red="0.99215686274509807" green="1" blue="0.043137254901960784" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="30"/>
-                                <state key="normal" title="Validate Custom">
-                                    <color key="titleColor" red="0.0018150252525253041" green="0.0018150252525253041" blue="0.0018150252525253041" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="onClickValidateCustom:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Quk-Y8-15k"/>
-                                </connections>
-                            </button>
-                        </subviews>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <navigationItem key="navigationItem" id="7DG-DV-ajA"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <segue destination="DDh-kL-qLV" kind="presentation" identifier="splashToLogin" modalPresentationStyle="fullScreen" modalTransitionStyle="coverVertical" id="87h-n6-2Wz"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8cS-gj-fEm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-997.5" y="-436.5"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="iDy-zs-Qwo">
+            <objects>
+                <viewController id="DDh-kL-qLV" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Bkr-7C-euR"/>
+                        <viewControllerLayoutGuide type="bottom" id="3Jg-vn-y81"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="NCq-Gf-Wmb">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.0" green="1" blue="0.82352948189999997" alpha="1" colorSpace="deviceRGB"/>
-                        <color key="tintColor" red="0.0" green="1" blue="0.82352948189999997" alpha="1" colorSpace="deviceRGB"/>
-                        <constraints>
-                            <constraint firstItem="eLh-8L-oLQ" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="20" symbolic="YES" id="2EG-Km-8zt"/>
-                            <constraint firstItem="eLh-8L-oLQ" firstAttribute="top" secondItem="MGT-xr-7UV" secondAttribute="bottom" constant="86" id="AJK-Ke-pbS"/>
-                            <constraint firstItem="fbB-ZP-ocG" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="8" symbolic="YES" id="G1u-Gz-mfj"/>
-                            <constraint firstItem="MGT-xr-7UV" firstAttribute="centerX" secondItem="fbB-ZP-ocG" secondAttribute="centerX" id="KCV-5Z-RfH"/>
-                            <constraint firstItem="fbB-ZP-ocG" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="151" id="SHE-1A-uEv"/>
-                            <constraint firstItem="fbB-ZP-ocG" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="45" id="V1n-fk-VE7"/>
-                            <constraint firstAttribute="trailing" secondItem="fbB-ZP-ocG" secondAttribute="trailing" constant="20" symbolic="YES" id="VNb-Xg-khX"/>
-                            <constraint firstItem="fbB-ZP-ocG" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="45" id="aA2-OE-L63"/>
-                            <constraint firstItem="fbB-ZP-ocG" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="hKe-vR-biv"/>
-                            <constraint firstItem="MGT-xr-7UV" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="56" id="lYR-3c-Ogu"/>
-                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="eLh-8L-oLQ" secondAttribute="bottom" priority="1" constant="318" id="mGU-eI-TCa"/>
-                            <constraint firstItem="MGT-xr-7UV" firstAttribute="top" secondItem="fbB-ZP-ocG" secondAttribute="bottom" constant="62" id="nyy-8U-tBy"/>
-                            <constraint firstAttribute="trailing" secondItem="eLh-8L-oLQ" secondAttribute="trailing" constant="20" symbolic="YES" id="xaA-cT-9Zn"/>
-                            <constraint firstItem="fbB-ZP-ocG" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="20" symbolic="YES" id="zY3-iP-jhd"/>
-                        </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="G1u-Gz-mfj"/>
-                                <exclude reference="SHE-1A-uEv"/>
-                                <exclude reference="V1n-fk-VE7"/>
-                                <exclude reference="zY3-iP-jhd"/>
-                            </mask>
-                        </variation>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2WG-z4-SnR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-174.5" y="-107.5"/>
+            <point key="canvasLocation" x="-420.5" y="-436.5"/>
         </scene>
     </scenes>
     <color key="tintColor" red="0.0026427606370000001" green="1" blue="0.48371122919999998" alpha="1" colorSpace="calibratedRGB"/>

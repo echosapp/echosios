@@ -22,6 +22,8 @@
 		572936691A7D7FF4007EEF57 /* EchosSession.m in Sources */ = {isa = PBXBuildFile; fileRef = 572936681A7D7FF4007EEF57 /* EchosSession.m */; };
 		5762994F1A913E570016E975 /* EchosAddressBook.m in Sources */ = {isa = PBXBuildFile; fileRef = 5762994E1A913E570016E975 /* EchosAddressBook.m */; };
 		576299521A9152030016E975 /* EchosContact.m in Sources */ = {isa = PBXBuildFile; fileRef = 576299511A9152030016E975 /* EchosContact.m */; };
+		576299551A944CDC0016E975 /* echosbg.png in Resources */ = {isa = PBXBuildFile; fileRef = 576299541A944CDC0016E975 /* echosbg.png */; };
+		576299571A9570F70016E975 /* echosbg2.png in Resources */ = {isa = PBXBuildFile; fileRef = 576299561A9570F70016E975 /* echosbg2.png */; };
 		57ADDF621A79B7E800D14C65 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 57ADDF611A79B7E800D14C65 /* main.m */; };
 		57ADDF651A79B7E800D14C65 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 57ADDF641A79B7E800D14C65 /* AppDelegate.m */; };
 		57ADDF681A79B7E800D14C65 /* echos.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 57ADDF661A79B7E800D14C65 /* echos.xcdatamodeld */; };
@@ -77,6 +79,8 @@
 		5762994E1A913E570016E975 /* EchosAddressBook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EchosAddressBook.m; sourceTree = "<group>"; };
 		576299501A9152030016E975 /* EchosContact.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EchosContact.h; sourceTree = "<group>"; };
 		576299511A9152030016E975 /* EchosContact.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EchosContact.m; sourceTree = "<group>"; };
+		576299541A944CDC0016E975 /* echosbg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = echosbg.png; path = ../../echosbg.png; sourceTree = "<group>"; };
+		576299561A9570F70016E975 /* echosbg2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = echosbg2.png; path = ../../echosbg2.png; sourceTree = "<group>"; };
 		57ADDF5C1A79B7E800D14C65 /* echos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = echos.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		57ADDF601A79B7E800D14C65 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		57ADDF611A79B7E800D14C65 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -162,6 +166,15 @@
 			name = EchosViewControllers;
 			sourceTree = "<group>";
 		};
+		576299531A944CCB0016E975 /* assets */ = {
+			isa = PBXGroup;
+			children = (
+				576299561A9570F70016E975 /* echosbg2.png */,
+				576299541A944CDC0016E975 /* echosbg.png */,
+			);
+			name = assets;
+			sourceTree = "<group>";
+		};
 		57ADDF531A79B7E800D14C65 = {
 			isa = PBXGroup;
 			children = (
@@ -185,6 +198,7 @@
 		57ADDF5E1A79B7E800D14C65 /* echos */ = {
 			isa = PBXGroup;
 			children = (
+				576299531A944CCB0016E975 /* assets */,
 				5729364C1A7D7CE0007EEF57 /* EchosViewControllers */,
 				57ADDF881A79CC8C00D14C65 /* EchosManager */,
 				57ADDF631A79B7E800D14C65 /* AppDelegate.h */,
@@ -334,6 +348,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				57ADDF6E1A79B7E800D14C65 /* Main.storyboard in Resources */,
+				576299571A9570F70016E975 /* echosbg2.png in Resources */,
+				576299551A944CDC0016E975 /* echosbg.png in Resources */,
 				57ADDF731A79B7E800D14C65 /* LaunchScreen.xib in Resources */,
 				57ADDF701A79B7E800D14C65 /* Images.xcassets in Resources */,
 			);

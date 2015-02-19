@@ -11,12 +11,16 @@
 
 @interface EchosContact : NSObject
 
-
+// rajesh
 - ( BOOL) isInstalledUser;
 -(instancetype) initwithName: (NSString*) name
                        phone: (NSString*) phone;
 
 -(NSString*) normalizePhoneNumber : (NSString*)number
                       countryCode : (NSString*)countryCode;
+
+-(void) setValues : (NSString*)name
+             phone: (NSString*)phone
+            isUser: (BOOL)isUser;
 
 @end

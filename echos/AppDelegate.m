@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "AFNetworkActivityLogger.h"
 
+#define APPKEY @"appKey"
 @interface AppDelegate ()
 
 @end
@@ -16,11 +17,36 @@
 @implementation AppDelegate
 
 
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+{
+    
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    if ([defaults objectForKey:APPKEY] == nil)
+    {
+        NSString* uid = [ self uuid ];
+        NSLog(@"%@", uid);
+        [defaults setObject:uid forKey:APPKEY];
+        [defaults synchronize];
+    }
+    
     // Override point for customization after application launch.
-    //[[AFNetworkActivityLogger sharedLogger] startLogging];
+    [[ AFNetworkActivityLogger sharedLogger] startLogging];
     return YES;
 }
+
+- (NSString *)uuid
+{
+    NSString *uuidString = nil;
+    CFUUIDRef uuid = CFUUIDCreate(NULL);
+    if (uuid) {
+        uuidString = (NSString *)CFBridgingRelease(CFUUIDCreateString(NULL, uuid));
+        CFRelease(uuid);
+    }
+    NSString *systemVersion = [[UIDevice currentDevice]systemVersion];
+    NSString *model = [[UIDevice currentDevice]model];
+    return [NSString stringWithFormat:@"%@-%@-%@",uuidString,systemVersion,model];
+}
+
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
@@ -125,5 +151,7 @@
         }
     }
 }
+
+
 
 @end

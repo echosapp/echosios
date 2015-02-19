@@ -11,7 +11,6 @@
 #define SERVICE_NAME @"Echos"
 #define AUTH_TOKEN_KEY @"auth_token"
 #define USERKEY @"userkey"
-#define PASSKEY @"passkey"
 #define UPDATE_TIME @"updatetime"
 
 @interface EchosManager ()
@@ -52,11 +51,12 @@
     return self;
 }
 
+// keychain functions
+
 - (void)clearSavedCredentials
 {
     [ self setSessionToken:nil];
     [ self setUserKey:nil];
-    [ self setPasswordKey:nil];
 }
 
 - (NSString *)sessionToken {
@@ -66,7 +66,16 @@
 - (void)setSessionToken:(NSString *)sessionToken
 {
     [self setSecureValue:sessionToken forKey:AUTH_TOKEN_KEY];
-    [self setSecureValue: [NSString stringWithFormat:@"%f", [[NSDate date] timeIntervalSince1970]] forKey:UPDATE_TIME ];
+    if ( sessionToken )
+    {
+        [self setSecureValue: [NSString stringWithFormat:@"%f", [[NSDate date] timeIntervalSince1970]] forKey:UPDATE_TIME ];
+    }
+    else
+    {
+        [self setSecureValue:nil forKey:UPDATE_TIME ];
+
+    }
+        
 }
 
 - (NSString *)userKey {
@@ -78,14 +87,6 @@
     [self setSecureValue:userkey forKey:USERKEY];
 }
 
--(NSString *)passwordKey {
-    return [self secureValueForKey:PASSKEY];
-}
-
-- (void)setPasswordKey:(NSString*) passwordkey
-{
-    [self setSecureValue:passwordkey forKey:PASSKEY];
-}
 
 - (void)setSecureValue:(NSString *)value forKey:(NSString *)key
 {
@@ -103,8 +104,10 @@
 }
 
 
+
+
 // get current user TODO: this method still needs to be fixed. fix once the session method is fixed
--( NSInteger* ) currentUser
+-( NSString* ) currentUser
 {
     if ( [self sessionToken] )
     {
@@ -112,13 +115,16 @@
         double cTime = (double) [ [NSDate date] timeIntervalSince1970];
         if ( (cTime - updatetime) > 596160 )
         {
+            /*
             NSMutableDictionary* result = [ self createSessionWithloginCredentials:[self userKey] password:[self passwordKey] ];
             if ( [result valueForKey:@"error" ] == nil )
             {
                 [ self setSessionToken:[ result valueForKey:@"sessionToken"]];
                 return (NSInteger*) 1;
             }
+             */
         }
+        return [self userKey];
     }
     return nil;
 }
