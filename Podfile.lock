@@ -25,6 +25,7 @@ PODS:
     - AFNetworking/NSURLSession
   - CountryPicker (1.2.3)
   - libPhoneNumber-iOS (0.7.6)
+  - Shimmer (1.0.2)
   - SSKeychain (1.2.2)
 
 DEPENDENCIES:
@@ -32,6 +33,7 @@ DEPENDENCIES:
   - AFNetworking (~> 2.4)
   - CountryPicker (~> 1.2)
   - libPhoneNumber-iOS (~> 0.7)
+  - Shimmer (~> 1.0)
   - SSKeychain
 
 SPEC CHECKSUMS:
@@ -39,6 +41,7 @@ SPEC CHECKSUMS:
   AFNetworking: 0f54cb5d16ce38c1b76948faffb8d5fb705021c7
   CountryPicker: f75fcb322007ffd2eae728a9e0c407ad60c0593e
   libPhoneNumber-iOS: d4316d494d4997c40a6059faf35a970d7f4eb1c0
+  Shimmer: 057fcfe9c1c978d69d50b64fce93a61080cd08ec
   SSKeychain: cc48bd3ad24fcd9125adb9e0d23dd50b8bbd08b9
 
 COCOAPODS: 0.35.0

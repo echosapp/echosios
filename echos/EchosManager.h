@@ -20,36 +20,52 @@
 
 +(instancetype) sharedClient;
 
--( NSInteger* ) currentUser;
+-( NSString* ) currentUser;
+
 
 // Validate Functions
-- (NSURLSessionDataTask* )   validateUserWithuserName:(NSString *)userName
-                                            password:(NSString *)password
-                                               phone:(NSString *)phone
-                                         countryCode:(NSString *)countryCode
-                                          completion:(void (^)(NSMutableDictionary * res))completion;
+// niraj
+- (NSURLSessionDataTask*) validateUserWithPhone:(NSString *)phone
+                                    countryCode:(NSString *)countryCode
+                                     completion:(void (^)(NSMutableDictionary* res)) completion;
 
 
 
 // Session Functions
-- ( NSMutableDictionary* ) createSessionWithloginCredentials: ( NSString* )loginName
-                                                   password : ( NSString* )password;
+// niraj
+- ( NSURLSessionDataTask* ) refreshSessionWithToken;
 
 
 // User Functions
--( NSMutableDictionary* ) createUserwithsessionToken: ( NSString * )sessionToken
-                                     validationCode : ( NSInteger * )validationCode;
+// niraj
+-( NSURLSessionDataTask* ) createUserwithsessionToken: ( NSString * )sessionToken
+                                     validationCode : ( NSInteger * )validationCode
+                                          completion: (void (^)(NSMutableDictionary* res)) completion;
+
+// niraj
+-( NSURLSessionDataTask* ) editProfilePictureWithImage: (NSData*) imageData;
+
+//niraj
+-( NSURLSessionDataTask* ) editDisplayNameWithName: (NSString*) displayName;
 
 
+
+
+// rajesh
 -( NSURLSessionDataTask* ) getInstalledUsersWithPhone: (NSArray * )phoneNumbers
                                           completion: (void (^) (NSMutableDictionary * res)) completion;
+// return = key, lastupdatedtime and phone
 // we pass an array of phone numbers - formatted to E164 - and get a dictionary with installed user information.
 
 
+// Friends endpoint
 
 
 
 
+// address book
+// rajesh
+-(NSMutableArray*) normalizeAndPersistContacts: (CFArrayRef*)contactsArray;
 
 
 

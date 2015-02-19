@@ -8,9 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "EchosManager.h"
+#import <FBShimmeringView.h>
 
 @interface EchosViewController : UIViewController
-- (IBAction)onClickValidate:(id)sender;
-- (IBAction)onClickValidateCustom:(id)sender;
+
 
 @end
