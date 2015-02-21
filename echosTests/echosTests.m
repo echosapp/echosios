@@ -54,11 +54,71 @@
 
 */
  
--(void) test_contact
-{
-    EchosContact* ec = [ [ EchosContact alloc] init];
-    [ ec normalizePhoneNumber:@"732319008" countryCode:@"+1"]; // invalid number
-    [ ec normalizePhoneNumber:@"7323190083" countryCode:@"+1"]; // valid number
+-(void) testManager{
+    
+    CFErrorRef *anError;
+    NSMutableArray * arrayToPass;
+    
+    ABAddressBookRef addBook = ABAddressBookCreateWithOptions(NULL, nil); // create address book record
+    ABRecordRef person = ABPersonCreate(); // create a person
+    
+    NSString *phone = @"17326683140"; // the phone number to add
+    NSString *phone1 = @"17326683141";
+    
+    //Phone number is a list of phone number, so create a multivalue
+    ABMutableMultiValueRef phoneNumberMultiValue  = ABMultiValueCreateMutable(kABMultiStringPropertyType);
+    ABMultiValueAddValueAndLabel(phoneNumberMultiValue, (__bridge CFTypeRef)(phone), kABPersonPhoneMobileLabel, NULL);
+    ABMultiValueAddValueAndLabel(phoneNumberMultiValue, (__bridge CFTypeRef)(phone1), kABPersonPhoneIPhoneLabel, NULL);
+    ABRecordSetValue(person, kABPersonFirstNameProperty, @"Rajesh" , nil); // first name of the new person
+    ABRecordSetValue(person, kABPersonLastNameProperty, @"Narasaiah", nil); // his last name
+    ABRecordSetValue(person, kABPersonPhoneProperty, phoneNumberMultiValue, nil); // set the phone number property
+    BOOL add = ABAddressBookAddRecord(addBook, person, anError); //add the new person to the record
+    
+    if (anError != nil) {
+        NSLog( @"Error while adding the record to the address book for person 1 : %@", CFErrorCopyFailureReason(*anError));
+    }
+    
+    ABRecordRef person1 = ABPersonCreate(); // create a person
+    
+    NSString *ph = @"17326683142"; // the phone number to add
+    NSString *ph1 = @"017326683143";
+    
+    //Phone number is a list of phone number, so create a multivalue
+    ABMutableMultiValueRef phNumberMultiValue  = ABMultiValueCreateMutable(kABMultiStringPropertyType);
+    ABMultiValueAddValueAndLabel(phNumberMultiValue, (__bridge CFTypeRef)(ph), kABPersonPhoneMobileLabel, NULL);
+    ABMultiValueAddValueAndLabel(phNumberMultiValue, (__bridge CFTypeRef)(ph1), kABPersonPhoneIPhoneLabel, NULL);
+    ABRecordSetValue(person1, kABPersonFirstNameProperty, @"Nirak" , nil); // first name of the new person
+    ABRecordSetValue(person1, kABPersonLastNameProperty, @"Khandekar", nil); // his last name
+    ABRecordSetValue(person1, kABPersonPhoneProperty, phNumberMultiValue, nil); // set the phone number property
+    ABAddressBookAddRecord(addBook, person1, anError); //add the new person to the record
+    if (anError!=nil) {
+        NSLog(@"Error while adding the record to the address book for person 2 : %@", CFErrorCopyFailureReason(*anError));
+    }
+    
+    
+    CFArrayRef testArray = ABAddressBookCopyArrayOfAllPeople(addBook);
+    BOOL status;
+    for (NSInteger i =0; i < CFArrayGetCount(testArray); i++) {
+        ABRecordRef contactRef = CFArrayGetValueAtIndex(testArray, i);
+        status = ABAddressBookRemoveRecord(addBook, contactRef, nil);
+    }
+    
+    status = ABAddressBookAddRecord(addBook, person, nil);
+    ABAddressBookSave(addBook, nil);
+    status = ABAddressBookAddRecord(addBook, person1, nil);
+    ABAddressBookSave(addBook, nil);
+    testArray = ABAddressBookCopyArrayOfAllPeople(addBook);
+    NSLog(@"array count %ld", CFArrayGetCount(testArray));
+    ABRecordRef *secondEntry = CFArrayGetValueAtIndex(testArray, 1);
+    NSLog(@"name: %@ , phoneNumber : %@", ABRecordCopyValue(secondEntry, kABPersonFirstNameProperty), ABRecordCopyValue(secondEntry, kABPersonPhoneProperty));
+    EchosManager *em = [[EchosManager alloc]init];
+    [em normalizeAndPersistContacts:&testArray];
+    
+    CFRelease(person);
+    CFRelease(person1); // relase the ABRecordRef  variable
+    CFRelease(addBook);
+    
+    
 }
 
 @end

@@ -11,6 +11,10 @@
 
 @interface EchosContact : NSObject
 
+@property NSString* formattedPhoneNumber;
+@property NSString* fullName;
+@property BOOL echosUser;
+
 // rajesh
 - ( BOOL) isInstalledUser;
 -(instancetype) initwithName: (NSString*) name

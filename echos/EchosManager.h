@@ -12,6 +12,8 @@
 #import "EchosSession.h"
 #import "SSKeychain.h"
 #import "EchosObject.h"
+#import "EchosContact.h"
+#import <AddressBook/AddressBook.h>
 
 
 @interface EchosManager : EchosObject

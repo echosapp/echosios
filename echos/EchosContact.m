@@ -27,6 +27,12 @@
     return false;
 }
 
+-(void)setValues:(NSString *)name phone:(NSString *)phone isUser:(BOOL)isUser{
+    _formattedPhoneNumber = phone;
+    _fullName = name;
+    _echosUser = isUser;
+    
+}
 
 -(NSString*) normalizePhoneNumber : (NSString*)number
                       countryCode : (NSString*)countryCode

@@ -173,4 +173,36 @@
     return nil;
 }
 
+#pragma mark user methods
+-(NSMutableArray*) normalizeAndPersistContacts: (CFArrayRef*)contactsArray{
+    
+    NSMutableDictionary *echosContactList;
+    EchosContact* contactObject = [EchosContact alloc];
+    CFIndex numberOfContacts = CFArrayGetCount(*contactsArray); //gets the count in the array
+    NSLog(@"numberOfContacts: %ld", numberOfContacts);
+    
+    //assumes no groups in here.
+    for ( int i=0; i< numberOfContacts; i++) {
+        ABRecordRef contactRef = CFArrayGetValueAtIndex(*contactsArray, i);
+        NSString *firstName = (__bridge NSString *)ABRecordCopyValue(contactRef, kABPersonFirstNameProperty);
+        ABMultiValueRef *phonesPerContact = (ABMultiValueRef*)ABRecordCopyValue(contactRef, kABPersonPhoneProperty); // 1 if only one phone number present
+        for (CFIndex numberOfPhones = 0; numberOfPhones < ABMultiValueGetCount(phonesPerContact); numberOfPhones++) {
+            NSString *phoneNumberRef = (__bridge NSString *)(ABMultiValueCopyValueAtIndex(phonesPerContact, numberOfPhones));
+            NSString *firstName = (__bridge NSString *)(ABRecordCopyValue(contactRef, kABPersonFirstNameProperty));
+            NSString *lastName = (__bridge NSString*)(ABRecordCopyValue(contactRef, kABPersonLastNameProperty));
+            NSString *fullName = [NSString stringWithFormat:@"%@ %@",firstName,lastName];
+            
+            //[contactObject initwithName:fullName phone:number];
+            NSString *numberInE164 = [contactObject normalizePhoneNumber:phoneNumberRef countryCode:@"US"]; //need a mechanism to popluate the country code dynamically
+            if (![numberInE164  isEqualToString: @"Error"]) {
+                //if the number is invalid unable to be formatted to E164 format, we move on.
+                [contactObject setValues:fullName phone:numberInE164 isUser:FALSE]; //MAYBE WE SHOULD USE CORE DATA HERE WHICH USES SQLLITE IN THE BACK TO STORE THE CONTACTS A.K.A STORE ECHOS CONTACT LIST.
+                [echosContactList setObject:contactObject forKey:numberInE164]; // populating the echos contact list with key:phone number and value:contactObject
+            }
+        }
+        
+    }
+    return nil;
+}
+
 @end
