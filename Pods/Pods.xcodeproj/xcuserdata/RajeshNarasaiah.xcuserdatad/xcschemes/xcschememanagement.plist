@@ -6,73 +6,83 @@
 	<dict>
 		<key>Pods-AFNetworkActivityLogger.xcscheme</key>
 		<dict>
-			<key>orderHint</key>
-			<integer>2</integer>
+			<key>isShown</key>
+			<false/>
 		</dict>
 		<key>Pods-AFNetworking.xcscheme</key>
 		<dict>
-			<key>orderHint</key>
-			<integer>3</integer>
+			<key>isShown</key>
+			<false/>
 		</dict>
 		<key>Pods-CountryPicker.xcscheme</key>
 		<dict>
-			<key>orderHint</key>
-			<integer>4</integer>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-RHAddressBook.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
 		</dict>
 		<key>Pods-SSKeychain.xcscheme</key>
 		<dict>
-			<key>orderHint</key>
-			<integer>5</integer>
+			<key>isShown</key>
+			<false/>
 		</dict>
 		<key>Pods-Shimmer.xcscheme</key>
 		<dict>
-			<key>orderHint</key>
-			<integer>6</integer>
+			<key>isShown</key>
+			<false/>
 		</dict>
 		<key>Pods-libPhoneNumber-iOS.xcscheme</key>
 		<dict>
-			<key>orderHint</key>
-			<integer>7</integer>
+			<key>isShown</key>
+			<false/>
 		</dict>
 		<key>Pods.xcscheme</key>
 		<dict>
-			<key>orderHint</key>
-			<integer>1</integer>
+			<key>isShown</key>
+			<false/>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>0404EA269A07651378A5CA64</key>
+		<key>1D132055D062B8278D3C6EB0</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>0FEF7DF7D5345783F2FDC716</key>
+		<key>311D065724FC683A92FC9359</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>37E29AFC7642B1A1213C2947</key>
+		<key>39AA0791B74056D490843724</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>5C40EFFB6D311CF955A853C1</key>
+		<key>40162887AED01CAD3A033CCD</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>5E60E4D29A0BF46DF63DE630</key>
+		<key>52E346CCEA0C36E1BDE270DF</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>7ACE9855D2B44256F9DEA568</key>
+		<key>863DC26F85BDF4CF71381DCF</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>9868E74C3BDF0B90185D6646</key>
+		<key>A412190B5C6C3EA644B3FB81</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>BE814CE6EDD3CAC7A40E479D</key>
 		<dict>
 			<key>primary</key>
 			<true/>

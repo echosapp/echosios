@@ -13,7 +13,8 @@
 #import "SSKeychain.h"
 #import "EchosObject.h"
 #import "EchosContact.h"
-#import <AddressBook/AddressBook.h>
+#import "RHAddressBook/AddressBook.h"
+
 
 
 @interface EchosManager : EchosObject
@@ -67,7 +68,7 @@
 
 // address book
 // rajesh
--(NSMutableArray*) normalizeAndPersistContacts: (CFArrayRef*)contactsArray;
+-(NSMutableArray*) normalizeAndPersistContacts: (NSArray*)contactsArray;
 
 
 

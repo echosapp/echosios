@@ -7,6 +7,7 @@
 //
 
 #import "EchosManager.h"
+#import "RHAddressBook/AddressBook.h"
 
 #define SERVICE_NAME @"Echos"
 #define AUTH_TOKEN_KEY @"auth_token"
@@ -174,22 +175,21 @@
 }
 
 #pragma mark user methods
--(NSMutableArray*) normalizeAndPersistContacts: (CFArrayRef*)contactsArray{
+-(NSMutableArray*) normalizeAndPersistContacts: (NSArray*)contactsArray{
     
     NSMutableDictionary *echosContactList;
-    EchosContact* contactObject = [EchosContact alloc];
-    CFIndex numberOfContacts = CFArrayGetCount(*contactsArray); //gets the count in the array
+    NSUInteger numberOfContacts = [contactsArray count]; //gets the count in the array
     NSLog(@"numberOfContacts: %ld", numberOfContacts);
     
     //assumes no groups in here.
-    for ( int i=0; i< numberOfContacts; i++) {
-        ABRecordRef contactRef = CFArrayGetValueAtIndex(*contactsArray, i);
-        NSString *firstName = (__bridge NSString *)ABRecordCopyValue(contactRef, kABPersonFirstNameProperty);
-        ABMultiValueRef *phonesPerContact = (ABMultiValueRef*)ABRecordCopyValue(contactRef, kABPersonPhoneProperty); // 1 if only one phone number present
-        for (CFIndex numberOfPhones = 0; numberOfPhones < ABMultiValueGetCount(phonesPerContact); numberOfPhones++) {
-            NSString *phoneNumberRef = (__bridge NSString *)(ABMultiValueCopyValueAtIndex(phonesPerContact, numberOfPhones));
-            NSString *firstName = (__bridge NSString *)(ABRecordCopyValue(contactRef, kABPersonFirstNameProperty));
-            NSString *lastName = (__bridge NSString*)(ABRecordCopyValue(contactRef, kABPersonLastNameProperty));
+    for ( NSUInteger i=0; i< numberOfContacts; i++) {
+        RHPerson *person = [contactsArray objectAtIndex:i];
+        RHMultiStringValue *phonesPerContact = [person phoneNumbers];
+        for (NSUInteger numberOfPhones = 0; numberOfPhones < [phonesPerContact count]; numberOfPhones++) {
+            EchosContact* contactObject = [EchosContact alloc];
+            NSString *phoneNumberRef = [phonesPerContact valueAtIndex:numberOfPhones];
+            NSString *firstName = [person firstName];
+            NSString *lastName = [person lastName];
             NSString *fullName = [NSString stringWithFormat:@"%@ %@",firstName,lastName];
             
             //[contactObject initwithName:fullName phone:number];

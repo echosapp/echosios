@@ -37,7 +37,7 @@
 
 -(void) setupSplashScreen
 {
-    
+    /*
     _echosBackground = [[UIImageView alloc] initWithFrame:self.view.bounds];
     _echosBackground.image = [UIImage imageNamed:@"echosbg"];
     _echosBackground.contentMode = UIViewContentModeScaleAspectFill;
@@ -60,7 +60,7 @@
     _echosLabel.textColor = [UIColor whiteColor];
     _echosLabel.textAlignment = NSTextAlignmentCenter;
     _echosLabel.backgroundColor = [UIColor clearColor];
-    _echosShimmer.contentView = _echosLabel;
+    _echosShimmer.contentView = _echosLabel;*/
 }
 
 
