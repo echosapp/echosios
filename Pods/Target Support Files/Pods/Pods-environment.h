@@ -60,6 +60,12 @@
 #define COCOAPODS_VERSION_MINOR_CountryPicker 2
 #define COCOAPODS_VERSION_PATCH_CountryPicker 3
 
+// RHAddressBook
+#define COCOAPODS_POD_AVAILABLE_RHAddressBook
+#define COCOAPODS_VERSION_MAJOR_RHAddressBook 1
+#define COCOAPODS_VERSION_MINOR_RHAddressBook 0
+#define COCOAPODS_VERSION_PATCH_RHAddressBook 4
+
 // SSKeychain
 #define COCOAPODS_POD_AVAILABLE_SSKeychain
 #define COCOAPODS_VERSION_MAJOR_SSKeychain 1

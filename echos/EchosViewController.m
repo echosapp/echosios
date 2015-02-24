@@ -37,9 +37,7 @@
 
 -(void) setupSplashScreen
 {
-    
-    //self.navigationBarHidden = true;
-    
+
     _echosBackground = [[UIImageView alloc] initWithFrame:self.view.bounds];
     _echosBackground.image = [UIImage imageNamed:@"echosbg"];
     _echosBackground.contentMode = UIViewContentModeScaleAspectFill;
