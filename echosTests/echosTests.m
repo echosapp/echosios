@@ -40,19 +40,23 @@
         // Put the code you want to measure the time of here.
     }];
 }
+*/
 
+-( void ) test_currentUser
+{
+    EchosManager* em = [ EchosManager sharedClient];
+    NSLog( @"%@", [ em currentUser] );
+
+    
+}
 
 
 -(void)test_validateUser
 {
     EchosManager* em = [ EchosManager sharedClient];
-    [ em validateUserWithuserName:@"niraj" password:@"niraj" phone:@"+17323190083" countryCode:@"+1" completion:^(NSMutableDictionary *res) {
-        NSLog( @"%@", res );
-    }];
-    
 }
 
-*/
+
  
 -(void) testManager{
     

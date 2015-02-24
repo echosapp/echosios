@@ -34,6 +34,20 @@
     return YES;
 }
 
+/*
+-(void) showLoginScreen:(BOOL)animated
+{
+    
+    // Get login screen from storyboard and present it
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
+    LoginViewController *viewController = (LoginViewController *)[storyboard instantiateViewControllerWithIdentifier:@"loginScreen"];
+    [self.window makeKeyAndVisible];
+    [self.window.rootViewController presentViewController:viewController
+                                                 animated:animated
+                                               completion:nil];
+}
+*/
+
 - (NSString *)uuid
 {
     NSString *uuidString = nil;

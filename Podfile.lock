@@ -1,30 +1,30 @@
 PODS:
-  - AFNetworkActivityLogger (2.0.3):
+  - AFNetworkActivityLogger (2.0.4):
     - AFNetworking/NSURLConnection (~> 2.0)
     - AFNetworking/NSURLSession (~> 2.0)
-  - AFNetworking (2.5.0):
-    - AFNetworking/NSURLConnection (= 2.5.0)
-    - AFNetworking/NSURLSession (= 2.5.0)
-    - AFNetworking/Reachability (= 2.5.0)
-    - AFNetworking/Security (= 2.5.0)
-    - AFNetworking/Serialization (= 2.5.0)
-    - AFNetworking/UIKit (= 2.5.0)
-  - AFNetworking/NSURLConnection (2.5.0):
+  - AFNetworking (2.5.1):
+    - AFNetworking/NSURLConnection (= 2.5.1)
+    - AFNetworking/NSURLSession (= 2.5.1)
+    - AFNetworking/Reachability (= 2.5.1)
+    - AFNetworking/Security (= 2.5.1)
+    - AFNetworking/Serialization (= 2.5.1)
+    - AFNetworking/UIKit (= 2.5.1)
+  - AFNetworking/NSURLConnection (2.5.1):
     - AFNetworking/Reachability
     - AFNetworking/Security
     - AFNetworking/Serialization
-  - AFNetworking/NSURLSession (2.5.0):
+  - AFNetworking/NSURLSession (2.5.1):
     - AFNetworking/Reachability
     - AFNetworking/Security
     - AFNetworking/Serialization
-  - AFNetworking/Reachability (2.5.0)
-  - AFNetworking/Security (2.5.0)
-  - AFNetworking/Serialization (2.5.0)
-  - AFNetworking/UIKit (2.5.0):
+  - AFNetworking/Reachability (2.5.1)
+  - AFNetworking/Security (2.5.1)
+  - AFNetworking/Serialization (2.5.1)
+  - AFNetworking/UIKit (2.5.1):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
   - CountryPicker (1.2.3)
-  - libPhoneNumber-iOS (0.7.6)
+  - libPhoneNumber-iOS (0.8.3)
   - Shimmer (1.0.2)
   - SSKeychain (1.2.2)
 
@@ -37,10 +37,10 @@ DEPENDENCIES:
   - SSKeychain
 
 SPEC CHECKSUMS:
-  AFNetworkActivityLogger: d6a2d2755fada3a1fbf1f490ec0dd92224e092a4
-  AFNetworking: 0f54cb5d16ce38c1b76948faffb8d5fb705021c7
+  AFNetworkActivityLogger: cdaa92ea0d544835babe0ba097e7806182d8f837
+  AFNetworking: 8bee59492a6ff15d69130efa4d0dc67e0094a52a
   CountryPicker: f75fcb322007ffd2eae728a9e0c407ad60c0593e
-  libPhoneNumber-iOS: d4316d494d4997c40a6059faf35a970d7f4eb1c0
+  libPhoneNumber-iOS: 640f078c832d2ded97ae24134bc009c3300686e3
   Shimmer: 057fcfe9c1c978d69d50b64fce93a61080cd08ec
   SSKeychain: cc48bd3ad24fcd9125adb9e0d23dd50b8bbd08b9
 

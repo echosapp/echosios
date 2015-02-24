@@ -124,8 +124,10 @@
             }
              */
         }
+        NSLog(@"%@", [self userKey] );
         return [self userKey];
     }
+    NSLog( @"nil");
     return nil;
 }
 

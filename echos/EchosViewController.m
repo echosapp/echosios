@@ -38,6 +38,8 @@
 -(void) setupSplashScreen
 {
     
+    //self.navigationBarHidden = true;
+    
     _echosBackground = [[UIImageView alloc] initWithFrame:self.view.bounds];
     _echosBackground.image = [UIImage imageNamed:@"echosbg"];
     _echosBackground.contentMode = UIViewContentModeScaleAspectFill;
@@ -71,10 +73,16 @@
     NSLog(@"%@", [ defaults objectForKey:@"appKey"]);
     if ( [ em currentUser ] )
     {
+        //EchosUserBoxViewController* eubvc = [[ EchosUserBoxViewController alloc] init ];
+        //[ self pushViewController:eubvc animated:YES ];
+    
         
     }
     else
     {
+        //EchosLoginViewController* elvc = [[EchosLoginViewController alloc] init];
+        //[ self pushViewController:elvc animated:YES ];
+        //[ self presentViewController:elvc animated:YES completion:nil];
                 
     }
 

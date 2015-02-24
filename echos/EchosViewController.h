@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "EchosManager.h"
+#import "EchosLoginViewController.h"
+#import "EchosUserBoxViewController.h"
 #import <FBShimmeringView.h>
 
 @interface EchosViewController : UIViewController
