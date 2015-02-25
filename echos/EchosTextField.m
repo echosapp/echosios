@@ -66,8 +66,4 @@
     return country;
 }
 
--(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
-    [self resignFirstResponder];// this will do the trick
-}
-
 @end
